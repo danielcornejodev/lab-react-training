@@ -7,8 +7,8 @@ export default function Random({ min, max }) {
   }
     
   return (
-    <div className="random">
-      Random value between {min} and {max}: {calcRandom()}
+    <div className="greetings">
+      Random value between {min} and {max} => {calcRandom()}
     </div>
   )
 }
