@@ -1,4 +1,6 @@
 import IdCard from './components/IdCard';
+import Greetings from './components/Greetings';
+import Random from './components/Random';
 import './App.css';
 
 const contacts = [
@@ -20,14 +22,30 @@ const contacts = [
   }
 ]
 
+const languages = [
+  {
+    lang: 'de'
+  },
+  {
+    lang: 'en'
+  }
+]
+
+
 const contactList = () => contacts.map(contact => (
   <IdCard lastName={ contact.lastName} firstName={ contact.firstName } gender={ contact.gender } height={ contact.height } birth={ contact.birth } picture={ contact.picture } />
  ))
+
+const getLang = () => languages.map(language => (
+  <Greetings lang={ language.lang }>Ludwig</Greetings>
+))
 
 function App() {
   return (
     <div className="App">
       {contactList()}
+      {getLang()}
+      <Random min={1} max={6}/>
     </div>
   );
 }
