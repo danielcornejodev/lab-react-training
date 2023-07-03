@@ -14,7 +14,18 @@ export default function CreditCard({ type, number, expirationMonth, expirationYe
 
     return (
         <div className='credit-card' style={{backgroundColor: bgColor, color: color}}>
-        {checkCCType()} {ccNum}
+            <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+                {checkCCType()}
+            </div>
+            <div>
+                {ccNum}
+            </div> 
+            <div>
+                Expires {expirationMonth}/{expirationYear} {bank}
+            </div>
+            <div>
+                {owner}
+            </div>
         </div>
     )
 }
