@@ -5,6 +5,12 @@ import BoxColor from './components/BoxColor';
 import CreditCard from './components/CreditCard';
 import Rating from './components/Rating';
 import DriverCard from './components/DriverCard';
+import LikeButton from './components/LikeButton';
+import ClickablePicture from './components/ClickablePicture';
+import Dice from './components/Dice';
+import Carousel from './components/Carousel';
+import SignupPage from './components/SignupPage';
+
 import './App.css';
 
 const contacts = [
@@ -35,6 +41,13 @@ const languages = [
   }
 ]
 
+const images = [
+  'https://randomuser.me/api/portraits/women/1.jpg',
+  'https://randomuser.me/api/portraits/men/1.jpg',
+  'https://randomuser.me/api/portraits/women/2.jpg',
+  'https://randomuser.me/api/portraits/men/2.jpg'
+];
+
 
 const contactList = () => contacts.map(contact => (
   <IdCard lastName={ contact.lastName} firstName={ contact.firstName } gender={ contact.gender } height={ contact.height } birth={ contact.birth } picture={ contact.picture } />
@@ -43,6 +56,8 @@ const contactList = () => contacts.map(contact => (
 const getLang = () => languages.map(language => (
   <Greetings lang={ language.lang }>Ludwig</Greetings>
 ))
+
+
 
 function App() {
   return (
@@ -112,6 +127,11 @@ function App() {
           licensePlate: "BE33ER"
         }}
       />
+      <LikeButton />
+      <ClickablePicture />
+      <Dice />
+      <Carousel images={images}/>
+      <SignupPage />
     </div>
   );
 }
